@@ -11,5 +11,6 @@
 |
 */
 
-Route::resource('login', 'Login', array('only' => array('index')));
-Route::post('login/process','Login@loginProcess');
+Route::resource('login', 'LoginController', array('only' => array('index')));
+Route::post('login/process','LoginController@login_post');
+Route::get('logout','LogoutController@logout');
