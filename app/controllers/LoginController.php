@@ -37,7 +37,9 @@ class LoginController extends \BaseController {
 				return View::make('home')->with($this->data);
 			}
 			else {
-				return Redirect::back()->withErrors(['msgError', 'Login inválido']);
+				return Redirect::back()
+					->withErrors(['msgError', 'Login inválido'])
+					->withInput(Input::except('password'));
 			}
 		}
 	}
