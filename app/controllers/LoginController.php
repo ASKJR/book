@@ -32,10 +32,12 @@ class LoginController extends \BaseController {
 					->withInput(Input::except('password'));
 		}
 		else {
+			//LOGADO COM SUCESSO
 			if (Auth::attempt(['email' => $email, 'password' => $password ])) {
-				$this->data['user'] = Auth::User();
-				return View::make('home')->with($this->data);
+				//redireciona para BookController@index
+				return Redirect::to('book');
 			}
+			//LOGIN FAIL
 			else {
 				return Redirect::back()
 					->withErrors(['msgError', 'Login inválido'])
