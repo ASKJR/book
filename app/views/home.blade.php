@@ -11,12 +11,18 @@
   			</thead>
   			<tbody>
   				@foreach($books as $book)
+            <?php $checked=""?>
+            @foreach($checkedbooks as $checkedbook)
+              @if($book->id == $checkedbook->book_id)
+                <?php $checked="checked"?>
+              @endif
+            @endforeach
 	   				<tr>
 		   				<td>
 		   					<a  data-toggle="modal"   class="open-Modal"  data-title="{{$book->title}}" data-author="{{$book->author}}" data-paginas="{{$book->page}}" data-ano="{{$book->year}}" data-genre="{{$book->genre}}"
 		   					href="#visualizarLivroModal"> {{$book->title}}</a>
 		   				</td>
-		   				<td class="text-center"><input type="checkbox" data-off-title="No" data-on-title="JDJKDJ"></td>
+		   				<td class="text-center"><input type="checkbox" data-off-title="No" value="{{$book->id}}" {{$checked}}></td>
 		   			</tr>
 	   			@endforeach	
   			</tbody>
@@ -69,6 +75,35 @@
      	$(".modal-body #paginasId").text("Páginas: " + paginas);
       $(".modal-body #genreId").text("Gênero: " + genre);
 	});
+
+  $(':checkbox').change(function() {
+    
+    var bookId = $(this).val();
+    var url = "";
+    if ($(this).is(":checked")) {
+      //alert('SIM' + $(this).val());
+      url = "userbook/insert";
+    }
+    else {
+      //alert('NÃO' + $(this).val()); 
+      url = "userbook/delete";
+    }
+    $.ajax({
+        type: 'post',
+        url: url,
+        data: {
+          book_id: bookId
+        },
+        success:function(result) {
+          console.log('Successfully called');
+        },
+        error:function(xhr, status, error) {
+          console.log('Exeption:'+ xhr.responseText);
+        }
+      });
+
+  });
+
 
 </script>
 @stop

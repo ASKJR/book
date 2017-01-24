@@ -15,3 +15,5 @@ Route::resource('login', 'LoginController', array('only' => array('index')));
 Route::post('login/process','LoginController@login_post');
 Route::get('logout','LogoutController@logout');
 Route::resource('book', 'BookController',array('only' => array('index', 'show')));
+Route::post('userbook/insert','UserBookController@store');
+Route::post('userbook/delete','UserBookController@destroy');

@@ -10,10 +10,11 @@ class BookController extends \BaseController {
 	public function index()
 	{
 		$books = new Book();
+		$checkedBooks = new UserBook();
 		$this->data['user'] = Auth::User();
 		$this->data['books'] = $books->getBooks();
 		$this->data['bookscount'] = $books::count();
-
+		$this->data['checkedbooks'] = $checkedBooks->getBooksByUser(Auth::User()->id);
 		return View::make('home')->with($this->data);
 	}
 
