@@ -9,4 +9,5 @@ class UserBook extends Eloquent {
 	{
 		return $this->where('user_id',$user_id)->get();
 	}
+
 }

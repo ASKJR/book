@@ -32,4 +32,11 @@ class UserBookController extends \BaseController {
 			$userBook->delete();
 		}
 	}
+
+	public function showPontuacao()
+	{
+		$this->data['score'] = User::getScoreByUser(Auth::User()->id);
+		return View::make('score')->with($this->data);	
+	}
+
 }
