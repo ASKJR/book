@@ -18,3 +18,5 @@ Route::resource('book', 'BookController',array('only' => array('index', 'show'))
 Route::post('userbook/insert','UserBookController@store');
 Route::post('userbook/delete','UserBookController@destroy');
 Route::get('userbook/userscore','UserBookController@showPontuacao');
+Route::get('userbook/usertrophy','UserBookController@showTrofeu');
+Route::get('userbook/ranking','UserBookController@showRanking');

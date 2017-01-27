@@ -18,10 +18,10 @@
                 </li>
 
                 <li>
-                    <a href="#"><i class="fa fa-sort-alpha-asc " aria-hidden="true"> </i> <span style="margin-left:10px;">Troféus</span>  </a>
+                    <a href="{{URL::to('userbook/usertrophy')}}"><i class="fa fa-sort-alpha-asc " aria-hidden="true"> </i> <span style="margin-left:10px;">Troféus</span>  </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="fa fa-play-circle-o " aria-hidden="true"> </i> <span style="margin-left:10px;">Ranking</span> </a>
+                    <a href="{{ URL::to('userbook/ranking') }}"> <i class="fa fa-play-circle-o " aria-hidden="true"> </i> <span style="margin-left:10px;">Ranking</span> </a>
                 </li>
             </ul>
         </div>

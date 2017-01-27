@@ -9,6 +9,7 @@ class BookController extends \BaseController {
 	 */
 	public function index()
 	{
+
 		$books = new Book();
 		$checkedBooks = new UserBook();
 		$this->data['user'] = Auth::User();

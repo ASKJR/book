@@ -2,14 +2,14 @@ body {
     padding-top: 95px; 
 }
 
-.score-box {
+.box {
 	margin: 0 0 20px 0;
     width: 46.5%;
 	border: 1px solid #BBB;
     border-radius: 3px;
 }
 
-.heading-score-box {
+.heading-box {
 	background: #f3f3f3;
     border-bottom: #BBB solid 1px;
     font-size: 13px;
@@ -20,7 +20,7 @@ body {
     text-transform: uppercase;
 }
 
-.p-score-box {
+.p-box {
 	font-weight: 700;
     font-size: 24px;
     line-height: 50px;
